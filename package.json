@@ -1,0 +1,100 @@
+{
+  "name": "react-toastui-editor",
+  "version": "0.0.0",
+  "description": "ToastUI 에디터 모듈 (미사용 백업용).",
+  "keywords": [
+    "mornya",
+    "vessel",
+    "front-end"
+  ],
+  "homepage": "https://github.com/mornya/react-toastui-editor",
+  "bugs": "https://github.com/mornya/react-toastui-editor/issues",
+  "license": "MIT",
+  "author": "mornya <mornya78@gmail.com>",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mornya/react-toastui-editor"
+  },
+  "main": "./dist/index.js",
+  "module": "./esm/index.js",
+  "types": "./dist",
+  "scripts": {
+    "setup": "husky && lintest install || exit 0",
+    "prepublishOnly": "vessel prepublish && vessel build",
+    "login": "vessel login",
+    "clean": "vessel clean",
+    "build": "vessel build",
+    "build:esm": "vessel build --esm",
+    "watch": "vessel build --watch",
+    "format": "prettier --write --ignore-path .prettierignore ./src ./types",
+    "check": "vessel check",
+    "init": "lintest uninstall && lintest export",
+    "lint": "lintest lint",
+    "lint:fix": "lintest lint --fix",
+    "test": "lintest test",
+    "test:watch": "lintest test --watch",
+    "test:coverage": "lintest test --coverage",
+    "sonar": "sonar-scanner"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "!dist/test",
+    "!dist/**/@setup.d.ts",
+    "!dist/**/@setup.js",
+    "!dist/**/*.test.d.ts",
+    "!dist/**/*.test.js",
+    "esm",
+    "!esm/test",
+    "!esm/**/@setup.d.ts",
+    "!esm/**/@setup.js",
+    "!esm/**/*.test.d.ts",
+    "!esm/**/*.test.js",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6"
+  },
+  "dependencies": {
+    "@toast-ui/editor": "^3.2.2",
+    "@toast-ui/editor-plugin-color-syntax": "^3.1.0",
+    "@toast-ui/react-editor": "^3.2.3"
+  },
+  "devDependencies": {
+    "@lintest/core": "^1.17.0",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^22.5.0",
+    "@types/react": "^18.2.79",
+    "@types/react-dom": "^18.2.25",
+    "@types/webpack-env": "^1.18.5",
+    "eslint": "^8.57.0",
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.9",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4"
+  },
+  "peerDependencies": {
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
+  },
+  "lint-staged": {
+    "*.{css,scss}": [
+      "prettier --write --ignore-path .prettierignore"
+    ],
+    "*.{ts,tsx}": [
+      "prettier --write --ignore-path .prettierignore",
+      "lintest check",
+      "lintest lint"
+    ]
+  },
+  "vessel": {
+    "minVersion": "5.4.0"
+  }
+}
