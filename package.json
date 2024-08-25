@@ -1,7 +1,7 @@
 {
   "name": "react-toastui-editor",
-  "version": "0.0.0",
-  "description": "ToastUI 에디터 모듈 (미사용 백업용).",
+  "version": "0.0.1",
+  "description": "ToastUI 에디터 모듈 (미사용으로 인한 코드백업).",
   "keywords": [
     "mornya",
     "vessel",

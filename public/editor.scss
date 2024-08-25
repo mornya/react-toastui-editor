@@ -1,0 +1,67 @@
+.editor-wrap {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+
+  /*===== FontSizePlugin =====*/
+  .toastui-editor-defaultUI {
+    /* dark mode */
+    &.toastui-editor-dark {
+      .toastui-editor-popup {
+        .toastui-editor-popup-body {
+          .size-input {
+            border-color: #36383f;
+            color: #fff;
+          }
+
+          .drop-down-item:hover {
+            background-color: #36383f;
+          }
+        }
+      }
+    }
+
+    .toastui-editor-popup {
+      .toastui-editor-popup-body {
+        .size-input {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          margin-bottom: 8px;
+          padding-left: 8px;
+          height: 32px;
+          border-top-width: 0;
+          border-left-width: 0;
+          border-right-width: 0;
+          border-bottom-width: 1px;
+          background-color: transparent;
+          color: #fff;
+          outline: none;
+        }
+
+        .drop-down {
+          margin-top: 32px;
+
+          .drop-down-item {
+            &:hover {
+              background-color: #ebedef;
+            }
+
+            & + .drop-down-item {
+              margin-top: 4px;
+            }
+
+            > button {
+              padding: 10px 16px;
+              width: 100%;
+              height: auto;
+              line-height: 1;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
